@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\I18n.Core.Wpf\I18n.Core.Wpf.csproj" />
+    <PackageReference Include="I18n.Core.Wpf" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
