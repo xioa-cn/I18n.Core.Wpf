@@ -3,7 +3,8 @@
   "Description": "描述",
   "Animal": {
     "People": {
-      "Sex": "性别"
+      "Sex": "性别",
+      "Age": 2
     }
   }
 }

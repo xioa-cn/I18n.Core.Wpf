@@ -46,7 +46,7 @@
             Width="200"
             Height="40"
             HorizontalAlignment="Left"
-            i18nAttach:I18nLocalizeAttach.AutoLocalize="Animal.People.Sex" />
+            i18nAttach:I18nLocalizeAttach.AutoLocalize="Animal.People.Age" />
     </StackPanel>
 
 </Window>

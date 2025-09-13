@@ -3,7 +3,8 @@
   "Description": "Description",
   "Animal": {
     "People": {
-      "Sex": "Sex"
+      "Sex": "Sex",
+      "Age": 1
     }
   }
 }
