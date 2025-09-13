@@ -1,0 +1,46 @@
+﻿<Window
+    x:Class="I18n.Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i18n="clr-namespace:I18n.Core.Wpf.Extensions;assembly=I18n.Core.Wpf"
+    xmlns:i18nAttach="clr-namespace:I18n.Core.Wpf.Attached;assembly=I18n.Core.Wpf"
+    xmlns:local="clr-namespace:I18n.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:I18n.Demo.ViewModels"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <StackPanel>
+        <ItemsControl ItemsSource="{Binding LangSources}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button
+                        Width="100"
+                        Height="30"
+                        Margin="20"
+                        Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.ChangeLangCommand}"
+                        CommandParameter="{Binding}"
+                        Content="{Binding Name}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock i18nAttach:I18nLocalizeAttach.AutoLocalize="Name" />
+        <Button
+            Width="200"
+            Height="40"
+            HorizontalAlignment="Left"
+            Content="{i18n:Localize Description}" />
+    </StackPanel>
+
+</Window>
