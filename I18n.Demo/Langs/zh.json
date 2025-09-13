@@ -1,4 +1,9 @@
 {
   "Name": "名字",
-  "Description": "描述"
+  "Description": "描述",
+  "Animal": {
+    "People": {
+      "Sex": "性别"
+    }
+  }
 }

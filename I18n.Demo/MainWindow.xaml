@@ -36,11 +36,17 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         <TextBlock i18nAttach:I18nLocalizeAttach.AutoLocalize="Name" />
+        <TextBlock Text="{i18n:Localize Animal.People.Sex}" />
         <Button
             Width="200"
             Height="40"
             HorizontalAlignment="Left"
             Content="{i18n:Localize Description}" />
+        <Button
+            Width="200"
+            Height="40"
+            HorizontalAlignment="Left"
+            i18nAttach:I18nLocalizeAttach.AutoLocalize="Animal.People.Sex" />
     </StackPanel>
 
 </Window>

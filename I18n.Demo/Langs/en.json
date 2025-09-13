@@ -1,4 +1,9 @@
 {
   "Name": "Name",
-  "Description": "Description"
+  "Description": "Description",
+  "Animal": {
+    "People": {
+      "Sex": "Sex"
+    }
+  }
 }
