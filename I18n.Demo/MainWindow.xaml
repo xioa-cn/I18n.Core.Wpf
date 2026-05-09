@@ -1,12 +1,14 @@
-﻿<Window
+<Window
     x:Class="I18n.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
     xmlns:i18n="clr-namespace:I18n.Core.Wpf.Extensions;assembly=I18n.Core.Wpf"
     xmlns:i18nAttach="clr-namespace:I18n.Core.Wpf.Attached;assembly=I18n.Core.Wpf"
     xmlns:local="clr-namespace:I18n.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:I18n.Demo.Models"
     xmlns:vm="clr-namespace:I18n.Demo.ViewModels"
     Title="MainWindow"
     Width="800"
@@ -47,6 +49,27 @@
             Height="40"
             HorizontalAlignment="Left"
             i18nAttach:I18nLocalizeAttach.AutoLocalize="Animal.People.Age" />
+
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <TextBlock>ComboBox选中值：</TextBlock>
+            <TextBlock Text="{Binding TestValue}" />
+        </StackPanel>
+
+        <ComboBox SelectedValue="{Binding TestValue}" SelectedValuePath="Tag">
+            <ComboBox.Items>
+                <ComboBoxItem Content="{i18n:Localize ComboBox.Value1}">
+                    <ComboBoxItem.Tag>
+                        <model:ComboBoxSelectValueEnum>None</model:ComboBoxSelectValueEnum>
+                    </ComboBoxItem.Tag>
+                </ComboBoxItem>
+                <ComboBoxItem Content="{i18n:Localize ComboBox.Value2}">
+                    <ComboBoxItem.Tag>
+                        <model:ComboBoxSelectValueEnum>Test1</model:ComboBoxSelectValueEnum>
+                    </ComboBoxItem.Tag>
+                </ComboBoxItem>
+            </ComboBox.Items>
+        </ComboBox>
+        <ComboBox ItemsSource="{Binding ComboBoxItems}" />
     </StackPanel>
 
 </Window>
