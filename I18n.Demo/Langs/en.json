@@ -6,5 +6,9 @@
       "Sex": "Sex",
       "Age": 1
     }
+  },
+  "ComboBox": {
+    "Value1": "Value1",
+    "Value2": "Value2"
   }
 }
