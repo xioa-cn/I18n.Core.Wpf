@@ -85,7 +85,6 @@ namespace I18n.Demo.ViewModels
 
         public object GetService(Type serviceType)
         {
-            // 你的 LocalizeExtension 只需要这个服务，所以直接返回自己
             if (serviceType == typeof(IProvideValueTarget))
                 return this;
             return null;
